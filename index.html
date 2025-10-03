@@ -6,8 +6,6 @@
     <title>Kuis Agama Islam: Kelas 3</title>
     <link rel="stylesheet" href="style.css">
     
-
-    
     <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
@@ -51,6 +49,34 @@
             border-bottom: 2px dashed #d4af37;
             padding-bottom: 5px;
             margin: 15px 0;
+        }
+
+        /* Gaya Tombol Opsi (Ditambahkan untuk kebutuhan CSS) */
+        .opsi-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            background-color: #f9f9f9;
+            text-align: left;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .opsi-btn:hover:not(:disabled) {
+            background-color: #e0e0e0;
+        }
+        .opsi-btn.correct {
+            background-color: #4CAF50 !important; /* Hijau */
+            color: white;
+            border-color: #4CAF50;
+        }
+        .opsi-btn.wrong {
+            background-color: #f44336 !important; /* Merah */
+            color: white;
+            border-color: #f44336;
         }
     </style>
 </head>
@@ -111,6 +137,9 @@
         Dibuat khusus untuk Pembelajaran Agama Islam Kelas 3.
     </footer>
 
+    <audio id="audio-benar" src="correct.mp3" preload="auto"></audio>
+    <audio id="audio-salah" src="wrong.mp3" preload="auto"></audio>
+    
     <script src="script.js"></script>
 </body>
 </html>
