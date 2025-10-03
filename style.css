@@ -1,186 +1,136 @@
-/* Import Font */
+/* style.css */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
     color: #333;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Ubah agar header di atas */
     align-items: center;
     min-height: 100vh;
-    margin: 0;
-    padding: 0;
 }
 
-/* Header Baru */
 .main-header {
-    width: 100%;
-    background-color: #1a5e4d; /* Hijau Tua */
+    background-color: #1a5e4d;
     color: white;
-    padding: 10px 0 20px 0;
+    width: 100%;
+    padding: 20px 0;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    position: relative;
-    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .main-header h1 {
-    margin: 5px 0;
-    font-family: 'Scheherazade New', serif;
-    font-size: 2.2em;
+    margin: 0;
+    font-size: 1.8em;
 }
 
-.main-header p {
-    margin: 0;
-    font-size: 0.9em;
+.tagline {
+    font-style: italic;
+    font-weight: 300;
 }
 
 #clock {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #ffd700; /* Emas */
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    opacity: 0.8;
 }
 
-/* Marquee Style */
 .running-text {
-    width: 100%;
-    background-color: #f7b731; /* Kuning/Oranye Cerah */
+    background-color: #d4af37;
     color: #333;
-    padding: 8px 0;
-    font-weight: 600;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 5px 0;
+    width: 100%;
+    font-weight: bold;
 }
 
-/* Container Utama */
 .container {
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    max-width: 650px;
+    margin: 20px auto;
+    max-width: 600px;
     width: 90%;
+}
+
+#skor-container {
+    background: #e9e9e9;
+    padding: 10px;
+    border-radius: 8px;
     margin-bottom: 20px;
     text-align: center;
+    font-weight: bold;
+    color: #1a5e4d;
 }
 
-/* Kotak Kuis dan Opsi (Sama seperti sebelumnya) */
 #kuis-box {
-    border: 2px solid #3498db; 
-    padding: 20px;
+    background: white;
+    padding: 25px;
     border-radius: 10px;
-    margin-bottom: 20px;
-    min-height: 150px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
 }
 
 #materi-label {
-    font-weight: bold;
-    color: #1a5e4d;
-    background-color: #e8f5e9;
-    padding: 5px;
+    background-color: #1a5e4d;
+    color: white;
+    padding: 5px 10px;
     border-radius: 5px;
+    display: inline-block;
     margin-bottom: 15px;
+    font-size: 0.9em;
 }
 
 #pertanyaan {
-    font-size: 1.3em;
+    font-size: 1.2em;
     font-weight: 600;
-    margin: 10px 0;
+    margin-bottom: 20px;
 }
 
 .opsi-container {
-    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
-.opsi-btn {
-    display: block;
-    width: 100%;
-    padding: 12px;
-    margin: 8px 0;
+/* Tombol Aksi */
+.tombol-aksi {
+    padding: 12px 25px;
     border: none;
     border-radius: 8px;
-    background-color: #3498db;
-    color: white;
-    font-size: 1.05em;
+    font-size: 1.1em;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.1s;
-    text-align: left;
-}
-
-.opsi-btn:hover:not(:disabled) {
-    background-color: #2980b9;
-    transform: translateY(-2px);
-}
-
-.opsi-btn:disabled {
-    cursor: not-allowed;
-    opacity: 0.7;
-}
-
-/* Styling Tombol Aksi (Mulai/Lanjut/Ulangi) */
-.tombol-aksi {
-    padding: 15px 35px;
-    border: none;
-    border-radius: 50px; /* Bentuk kapsul */
-    font-size: 1.2em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     margin-top: 15px;
+    transition: background-color 0.3s;
+    font-weight: 600;
+    width: 100%;
 }
 
 .tombol-start {
-    background-color: #2ecc71; /* Hijau - Mulai */
+    background-color: #1a5e4d;
     color: white;
 }
-
 .tombol-start:hover {
-    background-color: #27ae60;
-    transform: scale(1.05);
+    background-color: #124338;
 }
 
 .tombol-next {
-    background-color: #f39c12; /* Oranye - Lanjut */
+    background-color: #007bff;
     color: white;
 }
-
 .tombol-next:hover {
-    background-color: #e67e22;
-    transform: scale(1.05);
+    background-color: #0056b3;
 }
 
 .tombol-retry {
-    background-color: #e74c3c; /* Merah - Ulangi */
+    background-color: #dc3545;
     color: white;
 }
-
 .tombol-retry:hover {
-    background-color: #c0392b;
-    transform: scale(1.05);
+    background-color: #c82333;
 }
 
-/* Kelas Warna Jawaban */
-.correct {
-    background-color: #2ecc71 !important; 
-    box-shadow: 0 0 10px #2ecc71;
-}
-
-.wrong {
-    background-color: #e74c3c !important; 
-    box-shadow: 0 0 10px #e74c3c;
-}
-
-/* Footer */
 footer {
-    margin-top: 20px;
-    color: #777;
-    font-size: 0.9em;
+    margin-top: auto;
+    width: 100%;
+    background-color: #eee;
+    color: #666;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.8em;
 }
