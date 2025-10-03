@@ -271,9 +271,9 @@ const tombolLanjut = document.getElementById('tombol-lanjut');
 const tombolMulaiKuis = document.getElementById('tombol-mulai-kuis');
 const opsiTombol = Array.from(document.querySelectorAll('.opsi-btn'));
 
-// **PENTING: Pastikan elemen audio ini ada di HTML Anda**
-const audioBenar = document.getElementById('audio-benar'); 
-const audioSalah = document.getElementById('audio-salah');
+// --- HILANGKAN/KOMENTARI VARIABEL AUDIO (Karena tidak digunakan di HTML) ---
+// const audioBenar = document.getElementById('audio-benar'); 
+// const audioSalah = document.getElementById('audio-salah');
 
 
 // --- Fungsi Utama ---
@@ -365,29 +365,19 @@ function cekJawaban(jawabanPilihan, jawabanBenar) {
         tombolDipilih.classList.add('correct');
         tampilkanSweetAlert(true, tombolBenar.textContent);
         
-        // **PERBAIKAN AUDIO DISINI**
-        if (audioBenar) {
-            audioBenar.pause();
-            audioBenar.currentTime = 0;
-            audioBenar.play();
-        }
+        // --- LOGIKA AUDIO DIHAPUS ---
 
     } else {
         tombolDipilih.classList.add('wrong');
         tombolBenar.classList.add('correct');
         tampilkanSweetAlert(false, tombolBenar.textContent);
         
-        // **PERBAIKAN AUDIO DISINI**
-        if (audioSalah) {
-            audioSalah.pause();
-            audioSalah.currentTime = 0;
-            audioSalah.play();
-        }
+        // --- LOGIKA AUDIO DIHAPUS ---
     }
     
     updateSkorDisplay(); // Perbarui skor di layar
     pertanyaanSaatIniIndex++;
-    tombolLanjut.style.display = 'block'; // **PENTING: Munculkan tombol Lanjut setelah jawaban di-cek**
+    tombolLanjut.style.display = 'block'; // **PENTING: Tampilkan tombol Lanjut setelah jawaban di-cek**
 }
 
 /** 5. Cek Kelulusan Level (Leveling System) */
