@@ -271,8 +271,7 @@ const tombolLanjut = document.getElementById('tombol-lanjut');
 const tombolMulaiKuis = document.getElementById('tombol-mulai-kuis');
 const opsiTombol = Array.from(document.querySelectorAll('.opsi-btn'));
 
-const audioBenar = document.getElementById('audio-benar');
-const audioSalah = document.getElementById('audio-salah');
+
 
 // --- Fungsi Utama ---
 
@@ -363,10 +362,7 @@ function cekJawaban(jawabanPilihan, jawabanBenar) {
         tombolDipilih.classList.add('correct');
         tampilkanSweetAlert(true, tombolBenar.textContent);
         
-        // Reset dan Play audio
-        audioBenar.pause();
-        audioBenar.currentTime = 0;
-        audioBenar.play();
+       
 
     } else {
         tombolDipilih.classList.add('wrong');
@@ -374,9 +370,7 @@ function cekJawaban(jawabanPilihan, jawabanBenar) {
         tampilkanSweetAlert(false, tombolBenar.textContent);
         
         // Reset dan Play audio
-        audioSalah.pause();
-        audioSalah.currentTime = 0;
-        audioSalah.play();
+       
     }
     
     updateSkorDisplay(); // <--- PENTING: Perbarui skor di layar
@@ -497,4 +491,5 @@ sertifikatContainer.style.display = 'none';
 
 // Mulai Jam
 updateClock();
+
 setInterval(updateClock, 1000);
