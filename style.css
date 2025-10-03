@@ -1,0 +1,186 @@
+/* Import Font */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Ubah agar header di atas */
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Baru */
+.main-header {
+    width: 100%;
+    background-color: #1a5e4d; /* Hijau Tua */
+    color: white;
+    padding: 10px 0 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.main-header h1 {
+    margin: 5px 0;
+    font-family: 'Scheherazade New', serif;
+    font-size: 2.2em;
+}
+
+.main-header p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+#clock {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffd700; /* Emas */
+}
+
+/* Marquee Style */
+.running-text {
+    width: 100%;
+    background-color: #f7b731; /* Kuning/Oranye Cerah */
+    color: #333;
+    padding: 8px 0;
+    font-weight: 600;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Container Utama */
+.container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    max-width: 650px;
+    width: 90%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Kotak Kuis dan Opsi (Sama seperti sebelumnya) */
+#kuis-box {
+    border: 2px solid #3498db; 
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#materi-label {
+    font-weight: bold;
+    color: #1a5e4d;
+    background-color: #e8f5e9;
+    padding: 5px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+#pertanyaan {
+    font-size: 1.3em;
+    font-weight: 600;
+    margin: 10px 0;
+}
+
+.opsi-container {
+    margin-top: 20px;
+}
+
+.opsi-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 8px;
+    background-color: #3498db;
+    color: white;
+    font-size: 1.05em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+    text-align: left;
+}
+
+.opsi-btn:hover:not(:disabled) {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.opsi-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+/* Styling Tombol Aksi (Mulai/Lanjut/Ulangi) */
+.tombol-aksi {
+    padding: 15px 35px;
+    border: none;
+    border-radius: 50px; /* Bentuk kapsul */
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-top: 15px;
+}
+
+.tombol-start {
+    background-color: #2ecc71; /* Hijau - Mulai */
+    color: white;
+}
+
+.tombol-start:hover {
+    background-color: #27ae60;
+    transform: scale(1.05);
+}
+
+.tombol-next {
+    background-color: #f39c12; /* Oranye - Lanjut */
+    color: white;
+}
+
+.tombol-next:hover {
+    background-color: #e67e22;
+    transform: scale(1.05);
+}
+
+.tombol-retry {
+    background-color: #e74c3c; /* Merah - Ulangi */
+    color: white;
+}
+
+.tombol-retry:hover {
+    background-color: #c0392b;
+    transform: scale(1.05);
+}
+
+/* Kelas Warna Jawaban */
+.correct {
+    background-color: #2ecc71 !important; 
+    box-shadow: 0 0 10px #2ecc71;
+}
+
+.wrong {
+    background-color: #e74c3c !important; 
+    box-shadow: 0 0 10px #e74c3c;
+}
+
+/* Footer */
+footer {
+    margin-top: 20px;
+    color: #777;
+    font-size: 0.9em;
+}

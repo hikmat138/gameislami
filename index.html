@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuis Agama Islam: Kelas 3</title>
+    <link rel="stylesheet" href="style.css">
+    
+
+    
+    <link href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <style>
+        /* CSS Tambahan untuk Input Nama dan Sertifikat (Disimpan di sini agar mudah dilihat) */
+        #input-nama-container, #sertifikat-container {
+            padding: 30px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+        #nama-siswa {
+            width: 80%;
+            padding: 10px;
+            margin: 15px 0 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+        }
+        
+        /* Gaya Sertifikat Sederhana */
+        #sertifikat-konten {
+            border: 5px solid gold;
+            padding: 40px;
+            margin-top: 20px;
+            background-color: #ffffe0; /* Kuning Pucat */
+            font-family: 'Scheherazade New', serif;
+        }
+        .judul-sertifikat {
+            font-size: 2.5em;
+            color: #d4af37; /* Emas */
+            margin-bottom: 10px;
+        }
+        .nama-penerima {
+            font-size: 2em;
+            font-weight: bold;
+            color: #1a5e4d;
+            border-bottom: 2px dashed #d4af37;
+            padding-bottom: 5px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div id="clock">00:00:00</div>
+        <h1>Kuis Agama Islam Kelas 3</h1>
+        <p>Tingkatkan Ilmu Agama Islam Anda! | <span class="tagline">Barakallahu fiikum</span></p>
+    </header>
+
+    <marquee behavior="scroll" direction="left" class="running-text">
+        📢 Bismillah. Selamat mengerjakan kuis. Jawablah dengan jujur dan teliti. Semoga sukses! 🕌
+    </marquee>
+
+    <div class="container" id="input-nama-container">
+        <h2>Selamat Datang!</h2>
+        <p>Silakan masukkan nama Anda untuk memulai kuis.</p>
+        <input type="text" id="nama-siswa" placeholder="Contoh: Ahmad" required>
+        <button id="tombol-mulai-kuis" class="tombol-aksi tombol-start">Mulai Kuis!</button>
+    </div>
+
+    <div class="container" id="kuis-utama-container" style="display:none;">
+        
+        <div id="skor-container">
+            <span id="nama-disini"></span> | 
+            <span id="level-info">Level 1</span> | 
+            <span id="skor">Skor Level: 0 | Total Benar: 0</span>
+        </div>
+        <div id="kuis-box">
+            <div id="materi-label"></div>
+            <p id="pertanyaan"></p>
+
+            <div class="opsi-container">
+                <button class="opsi-btn">A. Opsi Satu</button> 
+                <button class="opsi-btn">B. Opsi Dua</button>
+                <button class="opsi-btn">C. Opsi Tiga</button>
+                <button class="opsi-btn">D. Opsi Empat</button>
+            </div>
+        </div>
+
+        <button id="tombol-lanjut" class="tombol-aksi tombol-next" style="display:none;">Lanjut ke Pertanyaan</button>
+    </div>
+
+    <div class="container" id="sertifikat-container" style="display:none;">
+        <div id="sertifikat-konten">
+            <h2 class="judul-sertifikat">SERTIFIKAT PENGHARGAAN</h2>
+            <p>Diberikan Kepada:</p>
+            <div class="nama-penerima" id="nama-sertifikat"></div>
+            <p>Atas Prestasi Menyelesaikan **Kuis Agama Islam Kelas 3** dengan Nilai Akhir:</p>
+            <h3 id="nilai-akhir"></h3>
+            <p style="margin-top: 20px;">Semoga ilmu ini menjadi berkah, Aamiin.</p>
+        </div>
+        <button id="tombol-ulang" class="tombol-aksi tombol-retry" style="margin-top: 20px;">Ulangi Kuis</button>
+    </div>
+
+    <footer>
+        Dibuat khusus untuk Pembelajaran Agama Islam Kelas 3.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
