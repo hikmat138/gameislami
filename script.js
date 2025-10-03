@@ -271,6 +271,9 @@ const tombolLanjut = document.getElementById('tombol-lanjut');
 const tombolMulaiKuis = document.getElementById('tombol-mulai-kuis');
 const opsiTombol = Array.from(document.querySelectorAll('.opsi-btn'));
 
+// **PENTING: Pastikan elemen audio ini ada di HTML Anda**
+const audioBenar = document.getElementById('audio-benar'); 
+const audioSalah = document.getElementById('audio-salah');
 
 
 // --- Fungsi Utama ---
@@ -326,7 +329,7 @@ function tampilkanPertanyaan() {
     }
     
     gameSedangBerjalan = true;
-    tombolLanjut.style.display = 'none';
+    tombolLanjut.style.display = 'none'; // Sembunyikan tombol lanjut saat pertanyaan baru
 
     const data = dataLevel[pertanyaanSaatIniIndex];
     materiLabelEl.textContent = LEVEL_MAP[levelSaatIni].name;
@@ -362,26 +365,34 @@ function cekJawaban(jawabanPilihan, jawabanBenar) {
         tombolDipilih.classList.add('correct');
         tampilkanSweetAlert(true, tombolBenar.textContent);
         
-       
+        // **PERBAIKAN AUDIO DISINI**
+        if (audioBenar) {
+            audioBenar.pause();
+            audioBenar.currentTime = 0;
+            audioBenar.play();
+        }
 
     } else {
         tombolDipilih.classList.add('wrong');
         tombolBenar.classList.add('correct');
         tampilkanSweetAlert(false, tombolBenar.textContent);
         
-        // Reset dan Play audio
-       
+        // **PERBAIKAN AUDIO DISINI**
+        if (audioSalah) {
+            audioSalah.pause();
+            audioSalah.currentTime = 0;
+            audioSalah.play();
+        }
     }
     
-    updateSkorDisplay(); // <--- PENTING: Perbarui skor di layar
+    updateSkorDisplay(); // Perbarui skor di layar
     pertanyaanSaatIniIndex++;
-    tombolLanjut.style.display = 'block';
+    tombolLanjut.style.display = 'block'; // **PENTING: Munculkan tombol Lanjut setelah jawaban di-cek**
 }
 
 /** 5. Cek Kelulusan Level (Leveling System) */
 function cekKelulusanLevel() {
     const dataLevel = LEVEL_MAP[levelSaatIni];
-    // Gunakan skorLevel untuk perhitungan kelulusan
     const nilaiLevel = (skorLevel / dataLevel.total) * 100;
 
     let pesan;
@@ -405,7 +416,7 @@ function cekKelulusanLevel() {
         nextAction = 'ulang';
     }
     
-    // Tampilkan hasil level
+    // Tampilkan hasil level menggunakan SweetAlert
     Swal.fire({
         title: `Hasil Level ${levelSaatIni}`,
         text: pesan,
@@ -431,7 +442,6 @@ function gameSelesai() {
     sertifikatContainer.style.display = 'block';
 
     const totalSoal = dataKuis.level1.length + dataKuis.level2.length + dataKuis.level3.length;
-    // Nilai akhir dihitung berdasarkan total jawaban benar dari semua level.
     const nilaiAkhir = (skorTotal / totalSoal) * 100;
 
     document.getElementById('nama-sertifikat').textContent = namaSiswa;
